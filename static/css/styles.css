@@ -1,0 +1,22 @@
+.image {
+    height: 600px;
+}
+.main {
+    background-color: #B77AAB;
+    border: 3px solid black;
+    text-align: center;
+    width: 500px;
+    margin: auto;
+}
+body {
+    background-color: #7A296B;
+}
+.padding {
+    margin: 10px;
+}
+.center {
+    text-align: center;
+}
+.image {
+    height: 500px;
+}
