@@ -18,6 +18,9 @@ def encrypt():
 @app.route('/decrypt')
 def decrypt():
     return flask.render_template("decrypt.html")
+@app.route('/complete')
+def complete():
+    return flask.render_template("complete.html")
     
 @app.route("/desition", methods = ['POST'])
 def upload():
@@ -43,6 +46,10 @@ def runEncrypt():
 def runDecrypt():
     print("Hello")
     return render_template("decrypt.html")
+@app.route("/complete", methods = ['POST'])
+def runComplete():
+    print("Hello")
+    return render_template("complete.html")
 
 if __name__ == "__main__":    
     app.run(
