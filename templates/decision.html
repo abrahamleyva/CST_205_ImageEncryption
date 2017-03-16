@@ -8,17 +8,20 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Image Security</title>
+        <title>Decision</title>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
     </head>
     <body>
         <div class = "main">
-            <h1>Upload Image</h1>
-            <div class = "padding">
-                <form id = "upload-form" action = "{{url_for('decision')}}" method = "POST" enctype = "multipart/form-data">
-                    <input type = "file" name = "file" accept = "image/*">
-                    <input type = "submit" value = "Upload">
-                </form>
+            <h1>Encrypt-Decrypt</h1>
+            <div class = "padding center">
+                <img src = "/static/image.png" class = "image">
+                <div class = "padding">
+                    <form action = "{{url_for('encryptDecrypt')}}" method = "POST">
+                        <input type = "submit" value = "Submit">
+                    </form>
+                    <h4>This may take a minute</h4>
+                </div>
             </div>
         </div>
     </body>

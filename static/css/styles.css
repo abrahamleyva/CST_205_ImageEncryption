@@ -1,5 +1,12 @@
+/*Project: Image Encrypt and Decrypt*/
+/*Contributers: Abraham Medina, Ethan Ward, Bret Stine*/
+/*Class: CST 205-02 Spring 2017*/
+/*Date: March 16, 2017*/
+/*Abstract: This program allows the user to upload an image to a webpage and allows them to encrypt of decrypt the image.*/
+/*Github: https://github.com/abrahamleyva/CST_205_ImageEncryption*/
+
 .image {
-    height: 600px;
+    width: 400px;
 }
 .main {
     background-color: #B77AAB;
