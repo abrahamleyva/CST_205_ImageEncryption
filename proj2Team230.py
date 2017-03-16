@@ -6,6 +6,7 @@
 # Contribution: Ethan and Bret both coded lines 47-79 of proj2Team230.py and Abraham worked on the rest of proj2Team230.py and the other files.
 # Github: https://github.com/abrahamleyva/CST_205_ImageEncryption
 
+# Importing libraries
 import flask
 from flask import *
 import os
@@ -13,10 +14,11 @@ from PIL import Image
 import math
 import time
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__) # Define flask app
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# Defining routes so programs knows what html pages to display
 @app.route('/')
 def index():
     return flask.render_template("upload.html")
@@ -27,22 +29,27 @@ def decision():
 def encryptDecrypt():
     return flask.render_template("encryptDecrypt.html")
     
+# When upload.html redirects to decision.html this method exicutes first
 @app.route("/decision", methods = ['POST'])
 def upload():
     target = os.path.join(APP_ROOT, 'static/')
     print(target)
     
+    # If static folder is not preset it is created
     if not os.path.isdir(target):
         os.mkdir(target)
     
+    # Obtains a list of images that will be uploaded and saves them
     for file in request.files.getlist("file"):
         print(file)
         filename = file.filename
         destination = "/".join([target, 'image.png'])
         print(destination)
         file.save(destination)
+    # Redirects to decision.html
     return render_template("decision.html")
-    
+
+# When decision.html redirects to encryptDecrypt.html this method exicutes first    
 @app.route("/encryptDecrypt", methods = ['POST'])
 def runEncrypt():
     start_timer = time.time()
@@ -78,6 +85,7 @@ def runEncrypt():
     
     return render_template("encryptDecrypt.html")
 
+# This actually runs the flask app on port 8080
 if __name__ == "__main__":    
     app.run(
     port = int(os.getenv('PORT', 8080)),

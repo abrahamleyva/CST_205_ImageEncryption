@@ -15,6 +15,7 @@
         <div class = "main">
             <h1>Upload Image</h1>
             <div class = "padding">
+                <!--Form the redirects to decision.html once an image is submited-->
                 <form id = "upload-form" action = "{{url_for('decision')}}" method = "POST" enctype = "multipart/form-data">
                     <input type = "file" name = "file" accept = "image/*">
                     <input type = "submit" value = "Upload">
