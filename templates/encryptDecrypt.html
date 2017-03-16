@@ -5,20 +5,18 @@
 <!--Abstract: This program allows the user to upload an image to a webpage and allows them to encrypt of decrypt the image.-->
 <!--Github: https://github.com/abrahamleyva/CST_205_ImageEncryption-->
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Image Security</title>
+        <title>Encrypt and Decrypt</title>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
     </head>
     <body>
         <div class = "main">
-            <h1>Upload Image</h1>
-            <div class = "padding">
-                <form id = "upload-form" action = "{{url_for('decision')}}" method = "POST" enctype = "multipart/form-data">
-                    <input type = "file" name = "file" accept = "image/*">
-                    <input type = "submit" value = "Upload">
-                </form>
+            <h1>Encrypted-Decrypted</h1>
+            <div class = "padding center">
+                <img src = "/static/finalImage.png" class = "image">
+                <h3>(Right Click to Save As)</h3>
             </div>
         </div>
     </body>
